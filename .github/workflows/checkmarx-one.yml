@@ -54,3 +54,5 @@ jobs:
         with:
           # Path to SARIF file relative to the root of the repository
           sarif_file: cx_result.sarif
+        env:
+          GITHUB_TOKEN: ${{ secrets.CX_PAT }}
