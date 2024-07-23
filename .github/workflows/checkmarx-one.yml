@@ -54,3 +54,10 @@ jobs:
         with:
           # Path to SARIF file relative to the root of the repository
           sarif_file: cx_result.sarif
+        env:
+          GITHUB_TOKEN: ${{ secrets.CX_PAT }}
+      - name: Upload SARIF artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Checkmarx SARIF Report
+          path: cx_result.sarif
